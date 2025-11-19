@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF8">
+  <meta name="viewport" content="width=devicewidth, initialscale=1.0">
+  <title>Document</title>
+  <style>
+        
+        .header {
+          text-align:center;
+          color: blue;
+          margin:0 0 .5rem 0;
+        }
+        .layout {
+          display:flex;
+          flex-direction:column;
+          gap:var(gap);
+          align-items:stretch;
+        }
+        .profilepic {
+          width:100%;
+          max-width:420px;
+          height:auto;
+          display:block;
+          border-radius:6px;
+          object-fit:cover;
+          margin:0 auto;
+        }
+        main {
+          background-color: burlywood;
+          padding: 1rem;
+          border-radius:6px;
+          min-height:40vh;
+        }
+        p {
+          font-size:clamp(14px, 1.2vw, 18px);
+          line-height:1.6;
+          margin:0 0 .75rem 0;
+        }
+        /* Wider screens: place image and content sidebyside */
+        @media (min-width:700px){
+          .layout{
+            flex-direction:row;
+            align-items:flexstart;
+          }
+          .profilepic{
+            flex:0 0 38%;
+            max-width:none;
+            margin:0;
+          }
+          main{
+            flex:1 1 62%;
+          }
+        }
+       </style>
+</head>
+<body>
+  <h1 class="header">MY BIO</h1>
+  <hr>
+
+
+  <div class="layout page">
+    <img src="sun-sets-behind-mountain-ranges-600nw-2479236003.webp" alt="Sun set Image" class="profile-pic">
+
+   <main>
+   <p><b>Name:</b> Onyame Micah Roland</p>
+   <p><b>Gender:</b> Male</p>
+   <p><b>Age:</b> 19 years</p>
+   <p><b>Hobbies:</b> I spend most of my free time exploring a mix of quiet and active hobbies. On some days I settle with a sketchbook, trying out quick drawings of anything that catches my eye. When I want something more relaxing, I listen to podcasts while taking care of my small collection of indoor plants. Weekends are usually for outdoor fun, especially cycling around new neighbourhoods or joining friends for casual board-game nights. I also enjoy experimenting with simple recipes in the kitchen, mostly just to see what new flavour I can come up with.</p>
+   <p><b>Location:</b> UPSA hostel A</p>
+  </main>
+    </main>
+  </div>
+ 
+ </body>
+ </html>
