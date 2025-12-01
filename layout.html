@@ -1,78 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF8">
-  <meta name="viewport" content="width=devicewidth, initialscale=1.0">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Micah Roland Onyame — Profile</title>
   <style>
-        
-        .header {
-          text-align:center;
-          color: blue;
-          margin:0 0 .5rem 0;
-        }
-        .layout {
-          display:flex;
-          flex-direction:column;
-          gap:var(gap);
-          align-items:stretch;
-        }
-        .profilepic {
-          width:100%;
-          max-width:420px;
-          height:auto;
-          display:block;
-          border-radius:6px;
-          object-fit:cover;
-          margin:0 auto;
-        }
-        main {
-          background-color: burlywood;
-          padding: 1rem;
-          border-radius:6px;
-          min-height:40vh;
-        }
-        p {
-          font-size:clamp(14px, 1.2vw, 18px);
-          line-height:1.6;
-          margin:0 0 .75rem 0;
-        }
-        /* Wider screens: place image and content sidebyside */
-        @media (min-width:700px){
-          .layout{
-            flex-direction:row;
-            align-items:flexstart;
-          }
-          .profilepic{
-            flex:0 0 38%;
-            max-width:none;
-            margin:0;
-          }
-          main{
-            flex:1 1 62%;
-          }
-        }
-       </style>
+    :root{
+      --bg:#F5F7FA;
+      --card:#FFFFFF;
+      --accent:#0B63A7;
+      --muted:#6B7280;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      --max-width:1000px;
+      --shadow: 0 6px 18px rgba(11,99,167,0.12);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      min-height:100vh;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* Profile card */
+    .profile{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:28px;
+      height:fit-content;
+    }
+    aside {
+      min-height: 69vh;
+    }
+
+    .avatar{
+      width:100%;
+      height:280px;
+      border-radius:12px;
+      overflow:hidden;
+      background:linear-gradient(135deg,#E0F2FF,#EEF6FF);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:16px;
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    h1{font-size:20px;margin:0 0 6px 0}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:14px}
+
+    .info-list{display:flex;flex-direction:column;gap:8px;font-size:14px}
+    .info-item{display:flex;justify-content:space-between;align-items:center}
+    .label{color:var(--muted)}
+
+    /* Main content */
+    .main{
+      background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.9));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .section-title{display:flex;justify-content:space-between;align-items:center}
+    .section-title h2{margin:0;font-size:18px}
+    p{line-height:1.6;color:#1F2937}
+
+    .hobbies{margin-top:12px;font-size:15px}
+
+    .list-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .chip{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:#0B3E60}
+
+    footer{margin-top:24px;color:var(--muted);font-size:13px}
+
+    /* small screens */
+    @media (max-width:860px){
+      .container{grid-template-columns:1fr;}
+      .avatar{height:220px}
+    }
+
+    /* subtle button */
+    .btn{
+      display:inline-block;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid var(--accent);color:var(--accent);text-decoration:none;font-weight:600;font-size:14px
+    }
+
+    .contact{
+      margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;
+    }
+
+  </style>
 </head>
 <body>
-  <h1 class="header">MY BIO</h1>
-  <hr>
+  <main class="container" role="main">
+    <aside class="profile" aria-label="Profile card">
+      <div class="avatar" role="img" aria-label="Profile image of Micah Roland Onyame">
+        <!-- Replace the src with a real photo. For now this is a placeholder block. -->
+        <img src="sun-sets-behind-mountain-ranges-600nw-2479236003.webp">
+      </div>
 
+      <h1>Micah Roland Onyame</h1>
+      <div class="meta">Male • 19 years</div>
 
-  <div class="layout page">
-    <img src="sun-sets-behind-mountain-ranges-600nw-2479236003.webp" alt="Sun set Image" class="profile-pic">
+      <div class="info-list">
+        <div class="info-item"><span class="label">Location</span><strong>KASSEH, ADA</strong></div>
+        <div class="info-item"><span class="label">Nearby</span><span class="muted">Greater Ada area, Ghana</span></div>
+      </div>
 
-   <main>
-   <p><b>Name:</b> Onyame Micah Roland</p>
-   <p><b>Gender:</b> Male</p>
-   <p><b>Age:</b> 19 years</p>
-   <p><b>Hobbies:</b> I like spending my time on things that help me unwind and stay active. I enjoy football, whether it’s playing casually with friends or watching weekend league games. Music is a big part of my routine too, especially Afrobeats and highlife when I want something lively. I read when I want a quieter moment, usually short articles or stories that keep me thinking. I also enjoy hanging out with friends, trying out new food spots and taking evening walks when the weather is calm. These small activities help me stay balanced and make my days feel fuller.</p>
-   <p><b>Location:</b> KASSEH, ADA</p>
+      
+
+      
+    </aside>
+
+    <section class="main">
+      <div id="about" class="section">
+        <div class="section-title"><h2>About</h2></div>
+        <p style="margin-top:10px">Hi — I’m Micah. I’m 19, based in Kasseh, Ada. This page gives a short snapshot of who I am and what I like to do. Use the buttons on the left to jump between sections.</p>
+      </div>
+
+      <hr style="border:none;height:1px;background:#E6EEF8;margin:20px 0">
+
+      <div id="hobbies" class="section">
+        <div class="section-title"><h2>Hobbies & Interests</h2></div>
+        <p class="hobbies">I like spending my time on things that help me unwind and stay active. I enjoy football, whether it’s playing casually with friends or watching weekend league games. Music is a big part of my routine too, especially Afrobeats and highlife when I want something lively. I read when I want a quieter moment, usually short articles or stories that keep me thinking. I also enjoy hanging out with friends, trying out new food spots and taking evening walks when the weather is calm. These small activities help me stay balanced and make my days feel fuller.</p>
+
+        <div class="list-row" aria-hidden="false">
+          <span class="chip">Football</span>
+          <span class="chip">Afrobeats & Highlife</span>
+          <span class="chip">Reading</span>
+          <span class="chip">Friends & Food spots</span>
+          <span class="chip">Evening walks</span>
+        </div>
+      </div>
+
+      <hr style="border:none;height:1px;background:#E6EEF8;margin:20px 0">
+
+      
+
+    </section>
   </main>
-    </main>
-  </div>
- 
- </body>
-
- </html>
-
+</body>
+</html>
